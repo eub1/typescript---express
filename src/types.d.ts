@@ -23,6 +23,6 @@ interface SpecialDiaryEntry extends DiaryEntry {
   flightNumber: number
 }
 
-//! Pick y Omit no le funcionan, por runtime, por eso usa un map
+//! Esto solo define los tipos, al trabajar la info se mapea para que vuelva sin comment
 // export type NonSensitiveInfoDiaryEntry = Pick<DiaryEntry, 'id' | 'date' | 'weather' | 'visibility'>
 export type NonSensitiveInfoDiaryEntry = Omit<DiaryEntry, 'comment'>
