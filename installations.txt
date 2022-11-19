@@ -7,10 +7,19 @@
  6. npm install @types/express -D --> para que tenga los types, por ej, para importar express. Importante, lo instalamos como dependencia de desarrollo
 
  7.  npm run tsc  --> y aparece carpeta build, que habiamos indicado en outDir en tsconfig.json
-    // en package.json, agrega script "start"
+    - en package.json, agrega script "start"
 
 8. npm install ts-node-dev -D --> es como nodemon
- // package.json -> agrega script "dev"
+  - package.json -> agrega script "dev"
 
 9. npm install ts-standard -D
- // es un linter que usa esLint por debajo
+  - es un linter que usa esLint por debajo
+  - en package.json -> scripts -> "lint": "ts-standard"
+  - agrega en package.json:
+       "eslintConfig": {
+          "parserOptions": {
+            "project": "./tsconfig.json"
+          },
+          "extends": ["./node_modules/ts-standard/eslintrc.json"]
+        }
+  - ya puede usar npm run lint
