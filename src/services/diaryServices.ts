@@ -1,5 +1,5 @@
 
-import { DiaryEntry, NonSensitiveInfoDiaryEntry, Visibility, Weather } from '../types'
+import { DiaryEntry, NonSensitiveInfoDiaryEntry, NewDiaryEntry } from '../types'
 import diaryData from './diaries.json'
 // para que permita esto a;ade tsconfig.json --> resolveJsonModule: true  --> line 100
 
@@ -30,15 +30,26 @@ export const getEntrieswithoutSensitiveInfo = (): NonSensitiveInfoDiaryEntry[] =
   })
 }
 
-export const addEntry = (date: string, weather: Weather, visibility: Visibility, comment: string): DiaryEntry => {
-  const newDiaryEntry = {
+//* v.1
+// export const addEntry = (date: string, weather: Weather, visibility: Visibility, comment: string): DiaryEntry => {
+//   const newDiaryEntry = {
+//     id: Math.max(...diaries.map(d => d.id)) + 1, // busca el max id de los que existen en el array, y le agrega 1
+//     date,
+//     visibility,
+//     weather,
+//     comment
+//   }
+
+//   diaries.push(newDiaryEntry)
+//   return newDiaryEntry
+// }
+
+export const addEntry = (newDiaryEntry: NewDiaryEntry): DiaryEntry => {
+  const newDiary = {
     id: Math.max(...diaries.map(d => d.id)) + 1, // busca el max id de los que existen en el array, y le agrega 1
-    date,
-    visibility,
-    weather,
-    comment
+    ...newDiaryEntry
   }
 
-  diaries.push(newDiaryEntry)
-  return newDiaryEntry
+  diaries.push(newDiary)
+  return newDiary
 }
