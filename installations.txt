@@ -1,0 +1,13 @@
+ 1. npm init -y
+ 2. npm install typescript -D --> D mayus indica que todo es una dependencia de desarrollo y lo deja ahi
+ 3. package.json: en scripts agrega tsc
+  4.  npm run tsc -- --init
+     esto genera el archivo de tsconfig.json
+ 5. npm install express -E  --> R mayus, que guarda la version exacta, sin el ^
+ 6. npm install @types/express -D --> para que tenga los types, por ej, para importar express. Importante, lo instalamos como dependencia de desarrollo
+
+ 7.  npm run tsc  --> y aparece carpeta build, que habiamos indicado en outDir en tsconfig.json
+    // en package.json, agrega script "start"
+
+8. npm install ts-node-dev -D --> es como nodemon
+ // package.json -> agrega script "dev"
