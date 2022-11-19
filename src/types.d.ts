@@ -1,7 +1,4 @@
 
-export type Weather = 'sunny' | 'rainy' | 'cloudy' | 'windy' | 'stormy'
-export type Visibility = 'great' | 'good' | 'ok' | 'poor'
-
 // usar type si ya sabes que es mas bien fijo. No se pueden repetir los type, se estarian sobre-escribiendo.
 // Ej. volver a definir type Visibility = ...etc
 // si se pueden tener las interfaces mas de una vez, y se irian a;adiendo
@@ -19,9 +16,9 @@ export interface DiaryEntry {
 
 // SpecialDiaryEntry tiene todo lo que tiene DiaryEntry + flightNumber
 
-interface SpecialDiaryEntry extends DiaryEntry {
-  flightNumber: number
-}
+// interface SpecialDiaryEntry extends DiaryEntry {
+//   flightNumber: number
+// }
 
 //! Esto solo define los tipos, al trabajar la info se mapea para que vuelva sin comment
 // export type NonSensitiveInfoDiaryEntry = Pick<DiaryEntry, 'id' | 'date' | 'weather' | 'visibility'>
