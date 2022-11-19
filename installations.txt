@@ -11,3 +11,6 @@
 
 8. npm install ts-node-dev -D --> es como nodemon
  // package.json -> agrega script "dev"
+
+9. npm install ts-standard -D
+ // es un linter que usa esLint por debajo
