@@ -1,6 +1,12 @@
-import diaryData from './diaries.json' 
+import { DiaryEntry } from '../types';
+import diaryData from './diaries.json';
 // para que permita esto a;ade tsconfig.json --> resolveJsonModule: true  --> line 100
 
-export const getEntries = () => diaryData
+// asercion de tipos: obligarle a typescript a que una constante trabaje de una forma
+// as Array<DiaryEntry>  -> trata diaryData como un array de estos tipos
 
-export const addEntry = () => null
+const diaries: Array<DiaryEntry> = diaryData as Array<DiaryEntry>
+
+export const getEntries = () => diaries;
+
+export const addEntry = () => null;
